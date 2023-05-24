@@ -26,7 +26,7 @@ from aiogram.types import ParseMode
 
 storage = MemoryStorage()
 
-API_TOKEN = '5345912328:AAE-MwLrqEakFTMNPePE2696tOHSWUmF13M'
+API_TOKEN = 'Write Your Token Here'
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=API_TOKEN)
@@ -62,7 +62,7 @@ class Plan(StatesGroup):
     plan4 = State()
 
 
-""" *****************************************    НАЧИНАЕМ   ******************************************"""
+""" *****************************************    Starting   ******************************************"""
 @dp.message_handler(commands="start")
 async def cmd_start(message: types.Message):
     await message.answer("Добрый день! Я бот. Я помогу тебе отправить отчет, покажу результат дня и наглядный отчет твоей работы за месяц. Раздел Admin создан для руководителей, поэтому работай, стремись и у тебя тоже будет доступ :) ", reply_markup=kb_client)
@@ -273,7 +273,7 @@ async def report_of_month(message: types.Message):
 
 
 """"  ********************************** Отправить Почту ************************************* """
-@dp.message_handler(filters.IDFilter(user_id=1353075505),commands= "Email")
+@dp.message_handler(filters.IDFilter(user_id= write id who can use it),commands= "Email")
 async def report_of_month(message: types.Message):
     send_me()
     await message.answer("Отчет на почту отправлено")
@@ -344,7 +344,7 @@ async def report_of_month(message: types.Message):
 
 """" ******************** Только Админ ******************************* """
 
-@dp.message_handler(filters.IDFilter(user_id=1353075505),commands = "Admin")
+@dp.message_handler(filters.IDFilter(user_id= write a id who can use ),commands = "Admin")
 async def admin_panel(message:types.Message):
     await message.answer('Добрый день, Admin! Что хотели бы сделать? Обращаю Ваше внимание , что для создания нового плана на месяц или для его корректировки, необходимо удалить введенные ранее данные с помощью /Delete_all', reply_markup=kb_client3)
 
@@ -397,7 +397,7 @@ async def parse():
         md.text(title),'\n',
         md.text(paragraph),'\n',
         md.text(tarih))
-    await bot.send_message(-1001809364709, f'{text}<a href="{img_url}">.</a>', parse_mode=ParseMode.HTML)
+    await bot.send_message(-your chat id), f'{text}<a href="{img_url}">.</a>', parse_mode=ParseMode.HTML)
 
 
 
@@ -407,7 +407,7 @@ async def parse():
 
 def quiz():
     question = 'Сколько стоит отправить простое письмо до 20г по России?'
-    chat_id = '-1001809364709'
+    chat_id = '-your chat id'
     type_ = "quiz"
     correct_option_id = 2
     _TELEGRAM_BOT_TOKEN="5527521010:AAGkz20GIqmvoQigQNQzQ-u9ZLNUL139huE"
@@ -441,7 +441,7 @@ async def report(message: types.Message):
 
 
 async def remember():
-    await bot.send_message(chat_id=(-1001809364709),text='коллеги отчет')
+    await bot.send_message(chat_id=(-your chat id),text='коллеги отчет')
 
 async def scheduler():
     aioschedule.every().monday.at("17:00").do(remember)
