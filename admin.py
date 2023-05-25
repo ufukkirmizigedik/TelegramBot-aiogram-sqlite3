@@ -2,7 +2,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton,ReplyKeyboardRemov
 
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram import Bot, Dispatcher, executor, types
-API_TOKEN = '5527521010:AAGkz20GIqmvoQigQNQzQ-u9ZLNUL139huE'
+API_TOKEN = 'TOKEN HERE'
 import aiogram.utils.markdown as md
 bot = Bot(token=API_TOKEN)
 storage = MemoryStorage()
